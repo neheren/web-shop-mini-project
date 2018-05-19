@@ -40,12 +40,21 @@ app.get('/product/:id', function(req, res){
 		res.render("product.html", {product});
 	});
 })
+app.get('/about', function(req, res){
+	res.render("about.html");
+})
+
+app.get('/cart', function(req, res){
+	res.render("cart.html");
+})
 
 app.get('/404', function(req, res){
 	res.send('404');
 })
+
 app.get('*', function(req, res){
-	res.send('404');
+	res.redirect('/404')
 })
+
 
 app.listen(3000); 
