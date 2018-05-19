@@ -17,15 +17,15 @@ function insertIntoDb(){
         const db = client.db(dbName);
         db.collection("products").drop(function(err, delOK) {
             db.collection("products").insertMany([
-                { item: "Black Sweatshirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 500,00"},
-                { item: "Grey Sweatshirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 500,00"},
-                { item: "White T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
-                { item: "Grey T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
-                { item: "Black Long Sleeve T-Shirt Billionaire Bays Club", desc: "Featuring orange gradient Billionaire Boys Club print on left chest and astronaut head prints down each sleeve.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 400,00" },
-                { item: "Red T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
-                { item: "Sand Shirt Libertine Libertine", desc: "Sand coloured loose fit shirt featuring two flap chest pockets.", mat: "Made of 70% cotton, 30% polyester", qty: 25, size: ["Small","Medium","Large"], price: "DKK 600,00" },
-                { item: "Navy Shirt Libertine Libertine", desc: "Navy coloured loose fit shirt featuring two flap chest pockets.", mat: "Made of 70% cotton, 30% polyester", qty: 25, size: ["Small","Medium","Large"], price: "DKK 600,00" },
-                { item: "White T-Shirt Libertine Libertine", desc: "Featuring navy cloud and thunder embroidery on chest. ", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
+                { item: "Black Sweatshirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", img: "../images/Image_1.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 500,00"},
+                { item: "Grey Sweatshirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", img: "../images/Image_2.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 500,00"},
+                { item: "White T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", img: "../images/Image_3.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
+                { item: "Grey T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", img: "../images/Image_4.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
+                { item: "Black Long Sleeve T-Shirt Billionaire Bays Club", desc: "Featuring orange gradient Billionaire Boys Club print on left chest and astronaut head prints down each sleeve.", img: "../images/Image_5.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 400,00" },
+                { item: "Red T-Shirt Billionaire Bays Club", desc: "Featuring printed Billionaire Boys Club logo and on front chest.", img: "../images/Image_6.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
+                { item: "Sand Shirt Libertine Libertine", desc: "Sand coloured loose fit shirt featuring two flap chest pockets.", img: "../images/Image_7.jpg", mat: "Made of 70% cotton, 30% polyester", qty: 25, size: ["Small","Medium","Large"], price: "DKK 600,00" },
+                { item: "Navy Shirt Libertine Libertine", desc: "Navy coloured loose fit shirt featuring two flap chest pockets.", img: "../images/Image_8.jpg", mat: "Made of 70% cotton, 30% polyester", qty: 25, size: ["Small","Medium","Large"], price: "DKK 600,00" },
+                { item: "White T-Shirt Libertine Libertine", desc: "Featuring navy cloud and thunder embroidery on chest. ", img: "../images/Image_9.jpg", mat: "Made of 100% cotton", qty: 25, size: ["Small","Medium","Large"], price: "DKK 300,00" },
             ]);
             client.close();
         });
