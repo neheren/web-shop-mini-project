@@ -1,28 +1,32 @@
-#menu-bar{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-    background: #333;
+@font-face{
+    font-family: "PT-Sans";
+    src: url("../fonts/pt-sans/PTC55F.ttf");
 }
 
-#menu-bar li{
-    float: left;
+
+.logo{
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+
 }
 
-#menu-bar li a{
-    display:block;
-    color: white;
-    text-align: center;
-    padding: 20px 20px;
+.navigation-bar > a.nav-link{
+    
+    font-family: 'PT-Sans';
+    text-transform: uppercase;
+    color: black;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 50px 0 50px;
+    height: 80px;
+    line-height: 80px;  
+    float: right;
     text-decoration: none;
-    text-transform: capitalize;
 }
 
-#products-wrapper{
-    background: black;
-}
-
-ul.products-list{
-    list-style-type: none;
+.navigation-bar > a:hover{
+    text-decoration: underline;
 }
