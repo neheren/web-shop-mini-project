@@ -30,16 +30,22 @@ app.get('/product/:id', function(req, res){
 	id = req.params.id;
 	console.log(id)
 	if(id== null){
-		res.redirect('/404')
+		return res.redirect('/404')
 	}
-	db.getProduct(id, function(product){
+	db.getProduct(id, function(product, err){
+		if(err)
+			return res.redirect('/404')
+		
 		console.log({product});
 		res.render("product.html", {product});
 	});
 })
 
 app.get('/404', function(req, res){
-	res.send('404')
+	res.send('404');
+})
+app.get('*', function(req, res){
+	res.send('404');
 })
 
 app.listen(3000); 

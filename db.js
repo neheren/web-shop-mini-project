@@ -19,6 +19,9 @@ function insertIntoDb(){
             db.collection("products").insertMany([
                 { item: "Grøn trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
                 { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
 
             ]);
             client.close();
@@ -41,8 +44,14 @@ function getProducts(callback){
 function getProduct(id, callback){
     MongoClient.connect(url, function(err, client) {
 		assert.equal(null, err);
-		const db = client.db(dbName);
-        db.collection("products").findOne({_id: new mongo.ObjectID(id)} ,function(err, result) {
+        const db = client.db(dbName);
+        try{
+            oid = new mongo.ObjectID(id);
+        }
+        catch(err){
+            return callback("", err);
+        }
+        db.collection("products").findOne({_id: oid} ,function(err, result) {
             callback(result);
             if (err) throw err;
             client.close();

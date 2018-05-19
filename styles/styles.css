@@ -9,7 +9,7 @@
     vertical-align: top;
     width: 120px;
     height: 120px;
-    margin-right: 20px;
+    margin: 10px;
 
 }
 
@@ -29,4 +29,20 @@
 
 .navigation-bar > a:hover{
     text-decoration: underline;
+}
+
+#products-wrapper{
+    height: auto;
+    width: auto;
+    
+}
+
+#products-wrapper .products-list a img{
+    margin: 10% 5% 2% 2%;
+    height: 25%;
+    width: 25%;
+}
+
+#products-wrapper .products-list a img:hover{
+    -webkit-filter: grayscale(100%) blur(2px);
 }
