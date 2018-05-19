@@ -1,22 +1,23 @@
 * {
     box-sizing: border-box;
+
+}
+
+@font-face{
+    font-family: "PT-Sans";
+    src: url("../fonts/pt-sans/PTC55F.ttf");
 }
 
 body {
     background-color: #f1f1f1;
     padding: 20px;
-    font-family: Arial;
+    font-family: PT-Sans;
 }
 
 
 .main {
     max-width: 1000px;
     margin: auto;
-}
-
-@font-face{
-    font-family: "PT-Sans";
-    src: url("../fonts/pt-sans/PTC55F.ttf");
 }
 
 

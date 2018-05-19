@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/styles.css">
-    <script src="../scripts/cart.js"></script>
+    <script src="../scripts/shoppingcart.js"></script>
 
     <title>
         {{product.item}} - tøj.dk
@@ -14,20 +14,29 @@
 <body>
     <nav class="navigation-bar">
         <a class="nav-link" href="/cart">Cart</a>
-        <a class="nav-link" href="/">Products</a>
         <a class="nav-link" href="/contact">Contact</a>
         <a class="nav-link" href="/about">About</a>
+        <a class="nav-link" href="/">Products</a>
         <a href="/"><img src="../images/main_logo.png" alt="main logo" class="logo"></a>
     </nav>
     <div id="products-wrapper">
 
-<h3>{{product.item}}</h3>
-<img src="{{product.img}}" alt="">
+<h2>{{product.item}}</h2>
+<img src="{{product.img}}" style="width: 300px" alt="">
+<h3>Price: {{product.price}}</h3>
 <p>
     {{product.desc}}
 </p>
 <input type="button" onclick="addItemToCart('{{product.item}};')" value ="Add to cart">Add to cart</input>
 </div>
+<select>
+    {{#each product.size}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+</select>
+<br>
+<br>
+<b>{{product.mat}}</b>
 
 </body>
 </html>

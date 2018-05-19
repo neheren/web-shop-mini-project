@@ -12,9 +12,12 @@ app.use("/", express.static(__dirname + '/'));
 
 //inserting the products into the mongo db. 
 db.getProducts(function(products) {
-	if(products == null){
+	console.log("smagen " + products.length)
+	if(products.length == 0){
 		console.log("No products in db adding new ones")
 		db.insertIntoDb();
+	}else{
+		console.log("products already in db")
 	}
 });
 
@@ -46,6 +49,9 @@ app.get('/about', function(req, res){
 
 app.get('/cart', function(req, res){
 	res.render("cart.html");
+})
+app.get('/contact', function(req, res){
+	res.render("contact.html");
 })
 
 app.get('/404', function(req, res){
