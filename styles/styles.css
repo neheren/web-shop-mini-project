@@ -1,0 +1,28 @@
+#menu-bar{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background: #333;
+}
+
+#menu-bar li{
+    float: left;
+}
+
+#menu-bar li a{
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+#products-wrapper{
+    background: black;
+}
+
+ul.products-list{
+    list-style-type: none;
+}
