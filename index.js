@@ -11,16 +11,41 @@ app.set("views", __dirname + "/views");
 app.use("/", express.static(__dirname + '/'));
 
 //inserting the products into the mongo db. 
-db.insertIntoDb();
+db.getProducts(function(products) {
+	if(products == null){
+		console.log("No products in db adding new ones")
+		db.insertIntoDb();
+	}
+});
+
 // Define a route that renders the index view
 app.get("/", function (req, res) {
 	db.getProducts(function(products) {
-		console.log(products)
+		console.log(products);
 		res.render("index.html", {products});
 	});
 });
+
 app.get('/product/:id', function(req, res){
-	
+	id = req.params.id;
+	console.log(id)
+	if(id== null){
+		return res.redirect('/404')
+	}
+	db.getProduct(id, function(product, err){
+		if(err)
+			return res.redirect('/404')
+		
+		console.log({product});
+		res.render("product.html", {product});
+	});
+})
+
+app.get('/404', function(req, res){
+	res.send('404');
+})
+app.get('*', function(req, res){
+	res.send('404');
 })
 
 app.listen(3000); 

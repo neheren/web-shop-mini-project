@@ -1,6 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
- 
+const mongo = require('mongodb');
+
 // Connection URL
 const url = 'mongodb://localhost:27017';
  
@@ -18,13 +19,15 @@ function insertIntoDb(){
             db.collection("products").insertMany([
                 { item: "Grøn trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
                 { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
+                { item: "Rød trøje med ærmer lavet af stof", desc: "Lavet af det pureste stof", qty: 25, size: "large" },
 
             ]);
             client.close();
         });
 	});
 }
-
 
 function getProducts(callback){
     MongoClient.connect(url, function(err, client) {
@@ -35,13 +38,29 @@ function getProducts(callback){
             if (err) throw err;
             client.close();
         });
-        
 	});
 }
 
-
+function getProduct(id, callback){
+    MongoClient.connect(url, function(err, client) {
+		assert.equal(null, err);
+        const db = client.db(dbName);
+        try{
+            oid = new mongo.ObjectID(id);
+        }
+        catch(err){
+            return callback("", err);
+        }
+        db.collection("products").findOne({_id: oid} ,function(err, result) {
+            callback(result);
+            if (err) throw err;
+            client.close();
+        });
+	});
+}
 
 module.exports = {
     insertIntoDb,
     getProducts,
+    getProduct,
 }
