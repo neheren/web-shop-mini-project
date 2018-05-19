@@ -63,8 +63,8 @@ h1 {
 .column {
     float: left;
     width: 33.33%;
-
 }
+
 
 /* Clear floats after rows */ 
 .row:after {
