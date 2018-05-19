@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles/styles.css">
@@ -16,25 +17,20 @@
         <a class="nav-link" href="/">Products</a>
         <a href="index.html"><img src="../images/main_logo.png" alt="main logo" class="logo"></a>
    </nav>
-   
-    <div id="products-wrapper">
-    <ul class="products-list">
-       <!-- <img src="../images/Image%20#1.jpg" alt=""> -->
-        <!-- <a href=""><img src="../images/Image_1.jpg" alt=""></a>
-        <a href=""><img src="../images/Image_2.jpg" alt=""></a>
-        <a href=""><img src="../images/Image_3.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_4.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_5.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_6.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_7.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_8.jpg" alt=""></a>   
-        <a href=""><img src="../images/Image_9.jpg" alt=""></a>    -->
-       
-        {{#each products}}
-        <h2><a href="product/{{_id}}">{{item}}</a></h2>
-        {{/each}}
-    </ul>
+
+<!--  PRODUCTS  -->
+<div class="row">
+    {{#each products}}
+    <div class="column">
+      <div class="content">
+        <a href="product/{{_id}}"><img src="{{img}}" alt="Mountains" style="width:100%"></a>
+        <h4>{{item}}</h4>
+        <p>Lorem ipsum dolor..</p>
+      </div>
     </div>
+    {{/each}}
+</div>
+
 
 </body>
 </html>
