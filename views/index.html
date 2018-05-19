@@ -11,14 +11,18 @@
     <div id="menu-bar-wrapper">
        <im id="main-logo" src="images/"></im>
         <ul id="menu-bar">
-            <li><a href="index.html">Products</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">{{hello}}</a></li>
+            <li><a href="contact.html">{{world}}</a></li>
             <li><a href="about.html">About</a></li>
         </ul>   
     </div>
     
     <div id="products-wrapper">
-        <ul class="products-list">
+    <ul class="products-list">
+            {{#each products}}
+            <h2><a href="product/{{_id}}">{{item}}</a></h2>
+            {{/each}}
+                
             <li class="product animate"><a href=""><img src="" alt=""></a></li>
             <li class="product animate"><a href=""><img src="" alt=""></a></li>
             <li class="product animate"><a href=""><img src="" alt=""></a></li>
