@@ -3,40 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Products</title>
 </head>
 <body>
+    <nav class="navigation-bar">
+        <a class="nav-link" href="#">Products</a>
+        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#">About</a>
+        <a href="index.html"><img src="../images/main_logo.png" alt="main logo" class="logo"></a>
+   </nav>
    
-    <div id="menu-bar-wrapper">
-       <im id="main-logo" src="images/"></im>
-        <ul id="menu-bar">
-            <li><a href="index.html">{{hello}}</a></li>
-            <li><a href="contact.html">{{world}}</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>   
-    </div>
+
     
     <div id="products-wrapper">
     <ul class="products-list">
-            {{#each products}}
-            <h2><a href="product/{{_id}}">{{item}}</a></h2>
-            {{/each}}
-                
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            <li class="product animate"><a href=""><img src="" alt=""></a></li>
-            
-        </ul>
+        {{#each products}}
+        <h2><a href="product/{{_id}}">{{item}}</a></h2>
+        {{/each}}
+    </ul>
         
         
         
     </div>
-    
+
 </body>
 </html>
